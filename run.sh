@@ -46,6 +46,7 @@ touch src/styles/tailwind.css
 
 jq '.scripts={
 "build:style":"tailwind build src/styles/index.css -o src/styles/tailwind.css",
+"watch:style": "tailwind build src/styles/index.css -o src/styles/tailwind.css --watch",
 "start": "npm run build:style && react-scripts start",
 "build": "react-scripts build",
 "test": "react-scripts test",
@@ -56,5 +57,5 @@ mv package.json.temp package.json
 rm -rf src/index.css
 rm -rf src/App.css
 
-sed -i 's/\.\/index.css/.\/styles\/index.css/' src/index.js
+sed -i 's/\.\/index.css/.\/styles\/tailwind.css/' src/index.js
 sed -i '/App.css/d' src/App.js
